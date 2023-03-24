@@ -18,7 +18,10 @@ const Write = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post(
+        "https://penitdownbackend.onrender.com/upload",
+        formData
+      );
       return res.data;
     } catch (err) {
       console.log(err);
@@ -31,13 +34,16 @@ const Write = () => {
 
     try {
       state
-        ? await axios.put(`/posts/${state.id}`, {
-            title,
-            desc: value,
-            cat,
-            img: file ? imgUrl : "",
-          })
-        : await axios.post(`/posts/`, {
+        ? await axios.put(
+            `https://penitdownbackend.onrender.com/posts/${state.id}`,
+            {
+              title,
+              desc: value,
+              cat,
+              img: file ? imgUrl : "",
+            }
+          )
+        : await axios.post(`https://penitdownbackend.onrender.com/posts/`, {
             title,
             desc: value,
             cat,

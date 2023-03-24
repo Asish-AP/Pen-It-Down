@@ -21,7 +21,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/auth/register", inputs);
+      await axios.post(
+        "https://penitdownbackend.onrender.com/auth/register",
+        inputs
+      );
       navigate("/login");
     } catch (err) {
       setErr(err.response.data);
