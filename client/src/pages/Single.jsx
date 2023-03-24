@@ -23,7 +23,7 @@ const Single = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `https://penitdownbackend.onrender.com/posts/${postId}`
+          `https://penitdownbackend.onrender.com/api/posts/${postId}`
         );
         setPost(res.data);
       } catch (err) {
@@ -36,7 +36,7 @@ const Single = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `https://penitdownbackend.onrender.com/posts/${postId}`
+        `https://penitdownbackend.onrender.com/api/posts/${postId}`
       );
       navigate("/");
     } catch (err) {

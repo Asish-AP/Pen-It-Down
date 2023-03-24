@@ -13,7 +13,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `https://penitdownbackend.onrender.com/posts${cat}`
+          `https://penitdownbackend.onrender.com/api/posts${cat}`
         );
         setPosts(res.data);
       } catch (err) {

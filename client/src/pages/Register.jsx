@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://penitdownbackend.onrender.com/auth/register",
+        "https://penitdownbackend.onrender.com/api/auth/register",
         inputs
       );
       navigate("/login");
